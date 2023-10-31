@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  alpine-apache2-reverse-proxy-forensicid-uniqueid-hl:
+    image: hackinglab/alpine-apache2-reverse-proxy-forensicid-uniqueid-hl:3.2
+    environment:
+      - "HL_USER_USERNAME=hacker"
+      - "HL_USER_PASSWORD=compass"
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./config/proxy-html.conf:/etc/apache2/conf-frontend.d/proxy-html.conf
